@@ -6,14 +6,20 @@ let lateral = document.querySelector('.d-1-right');
 let numeros = document.querySelector('.d-1-3');
 
 let etapaAtual = 0;
+let numero="";
 
 function comecarEtapa(){
     let etapa = etapas[etapaAtual];
     let numeroHtml="";
-for(let i=0<etapa.numeros;i++){
-    numeroHtml += '<div class="numero"><'
-}
 
+    for(let i=0;i<etapa.numeros;i++){
+        numeroHtml += '<div class="numero"></div>';
+        if(i === 0 ){
+            numeroHtml='<div class = "numero pisca"></div>';
+        }
+    }
+
+    
     seuVotoPara.style.display='none';
     cargo.innerHTML=etapa.titulo;
     desccricao.innerHTML='';
@@ -21,9 +27,23 @@ for(let i=0<etapa.numeros;i++){
     lateral.innerHTML='';
     numeros.innerHTML=numeroHtml;
 }
+function atualizaInterface(){
+    
+}
 
 function clicou(n){
+    let elnumero = document.querySelector('.numero.pisca');
+   
     
+    if(elnumero !== null){
+        elnumero.innerHTML = n;
+        numero= `${numero}${n}`;
+
+        elnumero.classList.remove('pisca');
+        if(elnumero.nextElementSibling!==null){
+        elnumero.nextElementSibling.classList.add('pisca')
+        }
+    }
 }
 
 function branco(){
@@ -40,3 +60,4 @@ function confirma(){
 }
 
 comecarEtapa();
+
