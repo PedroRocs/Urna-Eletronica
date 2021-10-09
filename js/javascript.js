@@ -169,6 +169,5 @@ function confirma() {
 
     
       
-teclas()
 
 comecarEtapa();
