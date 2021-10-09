@@ -3,12 +3,17 @@ let cargo = document.querySelector('.d-1-2 span');
 let desccricao = document.querySelector('.d-1-4');
 let aviso = document.querySelector('.d-2');
 let lateral = document.querySelector('.d-1-right');
+let numeros = document.querySelector('.d-1-3');
 
-let etapaAtual = 0
+let etapaAtual = 0;
 
 function comecarEtapa(){
-    let etapa = etapa[etapaAtual];
+    let etapa = etapas[etapaAtual];
     let numeroHtml="";
+for(let i=0<etapa.numeros;i++){
+    numeroHtml += '<div class="numero"><'
+}
+
     seuVotoPara.style.display='none';
     cargo.innerHTML=etapa.titulo;
     desccricao.innerHTML='';
@@ -18,7 +23,7 @@ function comecarEtapa(){
 }
 
 function clicou(n){
-    alert("clicou em" +n)
+    
 }
 
 function branco(){
@@ -26,7 +31,8 @@ function branco(){
 }
 
 function corrige(){
-    alert("cicou em corrige")
+    
+    comecarEtapa();
 }
 
 function confirma(){
