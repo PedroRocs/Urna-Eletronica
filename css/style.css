@@ -167,6 +167,9 @@ body {
 
 .d-1-4 {
     flex: 1;
+}
 
-
+.aviso--grande{
+font-size:40px ;
+font-weight: bold;
 }
