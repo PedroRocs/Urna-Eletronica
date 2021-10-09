@@ -5,18 +5,18 @@ let etapas = [
         candidatos: [
             {
                 numero: "13024",
-                nome: 'Gustavo Inácio Lula da Silva',
-                partido: 'PT',
+                nome: 'Afonso Padilha da Silva',
+                partido: 'Camisa 10',
                 fotos: [
-                    {url:'../imagens/gustavo.png', legenda: 'Vereador'}
+                    {url:'vereador1.jpg', legenda: 'Vereador'}
                 ]
             },
             {
                 numero: "42069",
-                nome: 'Pedro da Silva Vaz de Lima',
-                partido: 'REDE',
+                nome: 'Padilha Afonso da Silva',
+                partido: 'No Amor',
                 fotos: [
-                    {url:'../imagens/pedro', legenda: 'Vereador'}
+                    {url:'vereador2.jpg', legenda: 'Vereador'}
                 ] 
             },
         ]

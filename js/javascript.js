@@ -66,18 +66,27 @@ if(candidato.length>0){
     candidato=candidato[0]
     seuVotoPara.style.display='block';
     desccricao.innerHTML=`Candidato: ${candidato.nome}<br/> Partido: ${candidato.partido}`;
-    
+    aviso.style.display='block';
+    let fotosHtml = '';
+    for (let i in candidato.fotos) {
+        fotosHtml += `  <div class="d-1-image"><img src="../imagens/${candidato.fotos[i].url}" alt=""> ${candidato.fotos[i].legenda} </div>`
+       
+    }
+    lateral.innerHTML=fotosHtml;
+}
+else{
+    branco()
 }
 
-    
-console.log("Candidato",candidato);
+
 }
 
 
 
 
 function branco(){
-    alert("cicou em branco")
+    seuVotoPara.style.display="block";
+    aviso.style.display = 'block'
 }
 
 function corrige(){
