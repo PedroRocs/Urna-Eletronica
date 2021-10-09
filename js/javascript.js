@@ -75,6 +75,7 @@ function atualizaInterface() {
         desccricao.innerHTML = `Candidato: ${candidato.nome}<br/> Partido: ${candidato.partido}`;
         aviso.style.display = 'block';
         let fotosHtml = '';
+       
         for (let i in candidato.fotos) {
             if(candidato.fotos[i].small){
                 fotosHtml += `  <div class="d-1-image small"><img src="../imagens/${candidato.fotos[i].url}" alt=""> ${candidato.fotos[i].legenda} </div>`
@@ -155,16 +156,19 @@ function confirma() {
         else{
             let tela = document.querySelector('.tela');
             tela.innerHTML="<div class='final pisca'>FIM</div>"
+            console.log(votos)
         }
     }
-  
+
         }
+
+       
   
 
     
 
     
       
-
+teclas()
 
 comecarEtapa();
