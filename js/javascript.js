@@ -26,10 +26,9 @@ function comecarEtapa(){
     aviso.style.display='none';
     lateral.innerHTML='';
     numeros.innerHTML=numeroHtml;
-}
-function atualizaInterface(){
     
 }
+
 
 function clicou(n){
     let elnumero = document.querySelector('.numero.pisca');
@@ -38,13 +37,44 @@ function clicou(n){
     if(elnumero !== null){
         elnumero.innerHTML = n;
         numero= `${numero}${n}`;
+        
 
         elnumero.classList.remove('pisca');
         if(elnumero.nextElementSibling!==null){
         elnumero.nextElementSibling.classList.add('pisca')
         }
+        else{
+            atualizaInterface();
+        }
     }
+   
 }
+function atualizaInterface(){
+    let etapa = etapas[etapaAtual];
+    let candidato = etapa.candidatos.filter((item)=>{
+    
+       
+    if(item.numero===numero){
+        return true
+    }
+    else{
+        return false
+    }
+
+});
+if(candidato.length>0){
+    candidato=candidato[0]
+    seuVotoPara.style.display='block';
+    desccricao.innerHTML=`Candidato: ${candidato.nome}<br/> Partido: ${candidato.partido}`;
+    
+}
+
+    
+console.log("Candidato",candidato);
+}
+
+
+
 
 function branco(){
     alert("cicou em branco")

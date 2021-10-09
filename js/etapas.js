@@ -4,7 +4,7 @@ let etapas = [
         numeros: 5,
         candidatos: [
             {
-                numero: 13024,
+                numero: "13024",
                 nome: 'Gustavo Inácio Lula da Silva',
                 partido: 'PT',
                 fotos: [
@@ -12,7 +12,7 @@ let etapas = [
                 ]
             },
             {
-                numero: 42069,
+                numero: "42069",
                 nome: 'Pedro da Silva Vaz de Lima',
                 partido: 'REDE',
                 fotos: [
@@ -26,7 +26,7 @@ let etapas = [
         numeros: 2,
         candidatos: [
             {
-                numero: 10,
+                numero: "10",
                 nome: 'Jailson dos Santos',
                 partido: 'PROA',
                 vice: 'Barack Obama',
@@ -36,7 +36,7 @@ let etapas = [
                 ]
             },
             {
-                numero: 17,
+                numero: "17",
                 nome: 'Jair Bolsonaro',
                 partido: 'RUIM',
                 vice: 'Donald Trump',
