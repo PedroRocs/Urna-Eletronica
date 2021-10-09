@@ -26,23 +26,23 @@ let etapas = [
         numeros: 2,
         candidatos: [
             {
-                numero: "10",
-                nome: 'Jailson dos Santos',
-                partido: 'PROA',
-                vice: 'Barack Obama',
+                numero: "22",
+                nome: 'Antonia Fatima da Silva',
+                partido: 'DEM',
+                vice: 'Fatima Antonia da Silva',
                 fotos: [
-                    {url:'../imagens/presidente.jpeg', legenda: 'Prefeito'},
-                    {url:'../imagens/obama.jpg', legenda: 'Vice-Prefeito', small: true}
+                    {url:'prefeito1.jpg', legenda: 'Prefeito'},
+                    {url:'vice1.jpg', legenda: 'Vice-Prefeito', small: true}
                 ]
             },
             {
-                numero: "17",
-                nome: 'Jair Bolsonaro',
-                partido: 'RUIM',
-                vice: 'Donald Trump',
+                numero: "33",
+                nome: 'Maria Fatima Gonzalez',
+                partido: 'TOP',
+                vice: 'Fatima Maria Gozalez',
                 fotos: [
-                    {url:'../imagens/bonoro.jpg', legenda: 'Prefeito'},
-                    {url:'../imagens/trampo.jpeg', legenda: 'Vice-Prefeito', small: true}
+                    {url:'prefeito2.jpg', legenda: 'Prefeito'},
+                    {url:'vice2.jpg', legenda: 'Vice-Prefeito', small: true}
                 ]  
             },
         ]

@@ -8,10 +8,13 @@ let numeros = document.querySelector('.d-1-3');
 
 let etapaAtual = 0;
 let numero = "";
-let brancoo=false;
+let brancoo = false;
+let votos=[];
+
+
 function comecarEtapa() {
-    numero="";
-    brancoo=false;
+    numero = "";
+    brancoo = false;
     let etapa = etapas[etapaAtual];
     let numeroHtml = "";
 
@@ -29,6 +32,8 @@ function comecarEtapa() {
     aviso.style.display = 'none';
     lateral.innerHTML = '';
     numeros.innerHTML = numeroHtml;
+
+  
 
 }
 
@@ -71,45 +76,95 @@ function atualizaInterface() {
         aviso.style.display = 'block';
         let fotosHtml = '';
         for (let i in candidato.fotos) {
-            fotosHtml += `  <div class="d-1-image"><img src="../imagens/${candidato.fotos[i].url}" alt=""> ${candidato.fotos[i].legenda} </div>`
+            if(candidato.fotos[i].small){
+                fotosHtml += `  <div class="d-1-image small"><img src="../imagens/${candidato.fotos[i].url}" alt=""> ${candidato.fotos[i].legenda} </div>`
+            }
+            else{
+                fotosHtml += `  <div class="d-1-image"><img src="../imagens/${candidato.fotos[i].url}" alt=""> ${candidato.fotos[i].legenda} </div>`
+            }
+            lateral.innerHTML = fotosHtml;
+               
+            }
 
         }
-        lateral.innerHTML = fotosHtml;
-    } else {
-        seuVotoPara.style.display = "block";
-        aviso.style.display = 'block';
-        desccricao.innerHTML = '<div class="aviso--grande pisca">VOTO NULO <div>';
-      
-   
+        else {
+            seuVotoPara.style.display = "block";
+            aviso.style.display = 'block';
+            desccricao.innerHTML = '<div class="aviso--grande pisca">VOTO NULO <div>';
+            
+        }
+        if(etapas[etapaAtual] == undefined){
+            
+            tela.innerHTML="";
+        }
         
-    }
+       
+    } 
+
+    
 
 
-}
 
 
 
 
 function branco() {
-    
-    if(numero===""){
-        brancoo=true;
-    numeros.innerHTML="";
-    seuVotoPara.style.display = "block";
-    aviso.style.display = 'block';
-    desccricao.innerHTML = '<div class="aviso--grande pisca">VOTO EM BRANCO <div>';
-}
+    numero = "";
+    if (numero === "") {
+        brancoo = true;
+        numeros.innerHTML = "";
+        seuVotoPara.style.display = "block";
+        aviso.style.display = 'block';
+        desccricao.innerHTML = '<div class="aviso--grande pisca">VOTO EM BRANCO <div>';
+        lateral.innerHTML = "";
 
-alert("Para voltar o branco não ode ter digitado em nenhum numero")
+    }
+
 }
 
 function corrige() {
-
     comecarEtapa();
 }
 
 function confirma() {
-    alert("cicou em confirma")
-}
+    let etapa = etapas[etapaAtual];
+    let votoConfirmado = false;
+    
+  
+    if (brancoo === true ) {
+        votoConfirmado = true;
+        
+        console.log(etapaAtual);
+        votos.push({
+            etapa: etapas[etapaAtual].titulo,
+            votos:'branco'
+        });}
+        else if(numero.length === etapa.numeros){
+            votoConfirmado = true;
+           
+            votos.push({
+                etapa: etapas[etapaAtual].titulo,
+                votos:numero 
+            });
+        }
+        if(votoConfirmado){
+            etapaAtual++;
+        if (etapas[etapaAtual] !== undefined) {
+            comecarEtapa();
+        }
+        else{
+            let tela = document.querySelector('.tela');
+            tela.innerHTML="<div class='final pisca'>FIM</div>"
+        }
+    }
+  
+        }
+  
+
+    
+
+    
+      
+
 
 comecarEtapa();
