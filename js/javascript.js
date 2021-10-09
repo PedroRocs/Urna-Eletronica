@@ -4,7 +4,7 @@ let desccricao = document.querySelector('.d-1-4');
 let aviso = document.querySelector('.d-2');
 let lateral = document.querySelector('.d-1-right');
 
-let etapaAtual = 0;
+let etapaAtual = 0
 
 function comecarEtapa(){
     let etapa = etapa[etapaAtual];
